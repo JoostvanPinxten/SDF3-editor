@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="nl.tue.ele.es.sdf3.editor.sdk"
+	label="SDF3 SDK Feature "
+	version="1.0.0.qualifier">
+	<plugin
+			id="nl.tue.ele.es.sdf3.editor"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="nl.tue.ele.es.sdf3.editor.ui"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+</feature>

@@ -1,0 +1,60 @@
+grammar nl.tue.ele.es.sdf3.editor.SDF3 with org.eclipse.xtext.common.Terminals
+
+generate sDF3 "http://www.es.ele.tue.nl/sdf3/editor/SDF3"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+SDF3:
+	'type' SDF_TYPE ';'
+	application=ApplicationGraph
+	'properties' '{' properties+=Property* '}';
+
+ApplicationGraph:
+	'application' 'graph' name=ID '{' actors+=Actor+ channels+=Channel+ '}'
+;
+
+Actor:
+	'actor' name=ID '[' type=ID ']' 
+	ports += Port 
+	(',' ports += Port)*
+	';'
+;
+
+Port:
+	portType=PortType name=ID rate=INT
+;
+ 
+enum PortType :
+	IN='in' | OUT='out'
+;
+Channel:
+	'channel' name=ID soure=[Port|FQN] 'to' destination=[Port|FQN] ('initially' initialTokens=INT)? 
+;
+
+FQN:
+	ID ('.' ID)*;
+	
+Property:
+	ActorProperty | ChannelProperty | GraphProperty
+;
+
+GraphProperty:
+	'throughput' throughput=DECIMAL ';'
+;
+
+terminal DECIMAL returns ecore::EDouble  :
+	('0'..'9')* '.' ('0'..'9')+
+;
+
+ChannelProperty:
+	'for' 'channel' channel=[Channel] '{' '}'
+;
+
+ActorProperty:
+	'for' 'actor' actor=[Actor|FQN] '{' '}'
+;
+	
+SDF_TYPE:
+	'SDF' | 'SADF'
+;
+

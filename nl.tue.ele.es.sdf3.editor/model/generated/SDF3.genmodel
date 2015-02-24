@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/nl.tue.ele.es.sdf3.editor/src-gen" editDirectory="/nl.tue.ele.es.sdf3.editor.edit/src"
+    editorDirectory="/nl.tue.ele.es.sdf3.editor.editor/src" modelPluginID="nl.tue.ele.es.sdf3.editor"
+    forceOverwrite="true" modelName="SDF3" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="nl.tue.ele.es.sdf3.editor.edit"
+    editorPluginID="nl.tue.ele.es.sdf3.editor.editor" runtimeVersion="2.10">
+  <genPackages prefix="SDF3" basePackage="nl.tue.ele.es.sdf3.editor" disposableProviderFactory="true"
+      fileExtensions="sdf3" ecorePackage="SDF3.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SDF3.ecore#//PortType">
+      <genEnumLiterals ecoreEnumLiteral="SDF3.ecore#//PortType/IN"/>
+      <genEnumLiterals ecoreEnumLiteral="SDF3.ecore#//PortType/OUT"/>
+    </genEnums>
+    <genClasses ecoreClass="SDF3.ecore#//SDF3">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDF3.ecore#//SDF3/application"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDF3.ecore#//SDF3/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="SDF3.ecore#//ApplicationGraph">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDF3.ecore#//ApplicationGraph/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDF3.ecore#//ApplicationGraph/actors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDF3.ecore#//ApplicationGraph/channels"/>
+    </genClasses>
+    <genClasses ecoreClass="SDF3.ecore#//Actor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDF3.ecore#//Actor/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDF3.ecore#//Actor/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SDF3.ecore#//Actor/ports"/>
+    </genClasses>
+    <genClasses ecoreClass="SDF3.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDF3.ecore#//Port/portType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDF3.ecore#//Port/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDF3.ecore#//Port/rate"/>
+    </genClasses>
+    <genClasses ecoreClass="SDF3.ecore#//Channel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDF3.ecore#//Channel/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDF3.ecore#//Channel/soure"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDF3.ecore#//Channel/destination"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDF3.ecore#//Channel/initialTokens"/>
+    </genClasses>
+    <genClasses ecoreClass="SDF3.ecore#//Property"/>
+    <genClasses ecoreClass="SDF3.ecore#//GraphProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SDF3.ecore#//GraphProperty/throughput"/>
+    </genClasses>
+    <genClasses ecoreClass="SDF3.ecore#//ChannelProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDF3.ecore#//ChannelProperty/channel"/>
+    </genClasses>
+    <genClasses ecoreClass="SDF3.ecore#//ActorProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SDF3.ecore#//ActorProperty/actor"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

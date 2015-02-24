@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.es.ele.tue.nl/sdf3/editor/SDF3" 
+       class = "nl.tue.ele.es.sdf3.editor.sDF3.SDF3Package"
+       genModel = "model/generated/SDF3.genmodel" /> 
+	
+  </extension>
+
+
+
+</plugin>
