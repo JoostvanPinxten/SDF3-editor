@@ -1,0 +1,39 @@
+type SDF;
+
+application graph h263decoder {
+	actor vld[A0]
+		out p0 594,
+		in p1 1,
+		out p2 1;
+		
+	actor iq[A1]
+		in p0 1,
+		out p1 1,
+		in p2 1,
+		out p3 1;
+		
+	actor idct[A2]
+		in p0 1,
+		out p1 1;
+		
+	actor mc[A3]
+		in p0 594,
+		in p1 1,
+		out p2 1;
+		
+	channel vld2iq vld.p0 to vld.p1
+	channel iq2idct iq.p1 to idct.p0
+	channel idct2mc idct.p1 to mc.p0
+	channel vld2vld vld.p2 to vld.p1 initially 1
+	channel iq2iq iq.p2 to iq.p1 initially 1
+	channel mc2mc mc.p2 to mc.p1 initially 1
+	
+}
+
+properties { 
+	for actor h263decoder.vld {
+		
+	}
+	
+	throughput 0.01;
+}
