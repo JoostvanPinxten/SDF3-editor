@@ -28,7 +28,7 @@ enum PortType :
 	IN='in' | OUT='out'
 ;
 Channel:
-	'channel' name=ID soure=[Port|FQN] 'to' destination=[Port|FQN] ('initially' initialTokens=INT)? 
+	'channel' name=ID source=[Port|FQN] 'to' destination=[Port|FQN] ('initially' initialTokens=INT)? 
 ;
 
 FQN:

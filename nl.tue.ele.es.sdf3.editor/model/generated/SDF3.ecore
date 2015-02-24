@@ -31,7 +31,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Channel">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="soure" eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Port"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="#//Port"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialTokens" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
