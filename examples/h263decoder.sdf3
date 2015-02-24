@@ -21,13 +21,12 @@ application graph h263decoder {
 		in p1 1,
 		out p2 1;
 		
-	channel vld2iq vld.p0 to vld.p1
+	channel vld2iq vld.p0 to iq.p0
 	channel iq2idct iq.p1 to idct.p0
 	channel idct2mc idct.p1 to mc.p0
 	channel vld2vld vld.p2 to vld.p1 initially 1
-	channel iq2iq iq.p2 to iq.p1 initially 1
+	channel iq2iq iq.p3 to iq.p2 initially 1
 	channel mc2mc mc.p2 to mc.p1 initially 1
-	
 }
 
 properties { 
